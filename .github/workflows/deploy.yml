@@ -25,5 +25,4 @@ jobs:
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: ssh -vv dev@37.77.104.77
       - run: cd dist && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . dev@37.77.104.77:/var/www/dev/html/
